@@ -51,9 +51,15 @@ def clean_review_file(filename):
     # Format the output
     product_id_in_use = set()
     formatted_output = []
+    count = 1
     for review in selected_results:
         title, product_id, review_text = review
         product_id_in_use.add(product_id)
+
+        formatted_print = f"{count}. {review_text}\n"
+        count += 1
+        with open('review.txt', 'a') as review_file:
+            review_file.write(formatted_print)
         formatted_output.append({
             "text": review_text,
             "label": "human"
