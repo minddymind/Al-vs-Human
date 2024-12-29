@@ -14,8 +14,11 @@ With the growing use of AI-generated content in e-commerce, understanding how AI
 
 ## **Key Features**  
 - **Dataset Exploration**: Analyzes authentic Amazon data from the beauty and health care category.  
-- **Text Classification**: Implements robust techniques to distinguish between AI and human-written text.  
+- **Text Classification**: Implements robust techniques, leveraging **BERT** for high-accuracy text classification. 
 - **Actionable Insights**: Delivers meaningful conclusions for e-commerce stakeholders and researchers.  
+
+## **Why BERT?**
+BERT is a state-of-the-art language representation model that excels in understanding contextual nuances within text. Its bidirectional nature enables it to capture relationships between words and phrases more effectively, making it ideal for distinguishing between human-written and AI-generated content.
 
 ## **Resources**  
 - 🌐 **Dataset Website**: [Amazon Reviews Dataset 2023](https://amazon-reviews-2023.github.io/)  
