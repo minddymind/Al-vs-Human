@@ -1,6 +1,7 @@
 import json 
 import re 
 import random
+import csv
 
 review_file = "Health_and_Personal_Care.jsonl"
 metadata_file = "meta_Health_and_Personal_Care.jsonl"
@@ -43,14 +44,18 @@ def clean_review_file(filename):
         title, product_id, review_text = review
         product_id_in_use.add(product_id)
         formatted_output.append({
-            "product_id": product_id,
-            "title": title,
-            "review": review_text
+            "text": review_text,
+            "label": "human"
         })
     
-    formatted_output = json.dumps(formatted_output, indent=4)
-    with open('cleaned_reviews.json', 'w') as outfile:
-        outfile.write(formatted_output)
+    with open('cleaned_reviews.csv', 'w', newline='') as csvfile:
+        fieldnames = ['text', 'label']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        for review in formatted_output:
+            writer.writerow(review)
+
     product_in_use(product_id_in_use)
 
     return formatted_output
