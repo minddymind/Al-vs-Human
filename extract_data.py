@@ -42,7 +42,5 @@ def read_file(filename):
             print(sentence_count)
 
 
-
-
 if __name__ == "__main__":
     read_file('Health_and_Personal_Care.jsonl')
