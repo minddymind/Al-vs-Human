@@ -13,11 +13,12 @@ def normalize_and_compare(str1, str2):
     return cleaned_str1 == cleaned_str2
 
 def read_file(filename):
+    #format sentences and choose only english sentences for 10500 sentences
     with open(filename, 'r') as file:
         unique_senteces = set()
         sentence_count = 0
         for line in file:
-            if sentence_count == 10000:
+            if sentence_count == 10500:
                 break
             this_line = json.loads(line.strip())
             review_text = re.sub(r'[\\/]', '', re.sub(r'<[^>]*>', '', re.sub(r'\[\[.*?\]\]', '', re.sub(r'\(\d+ stars\)', '', this_line["text"]))))
@@ -34,7 +35,7 @@ def read_file(filename):
                 if normalize_and_compare(unique_sent, formatted_print):
                     continue
             
-            with open('all_review_cleaned.txt', 'a') as review_file:
+            with open('original_review.txt', 'a') as review_file:
                 review_file.write(formatted_print)
                 unique_senteces.add(formatted_print)
                 sentence_count += 1
@@ -44,4 +45,4 @@ def read_file(filename):
 
 
 if __name__ == "__main__":
-    # read_file('Health_and_Personal_Care.jsonl')
+    read_file('Health_and_Personal_Care.jsonl')
