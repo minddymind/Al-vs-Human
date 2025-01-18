@@ -1,0 +1,1 @@
+with the following 1000 reviews Write a product review similar to this example, but rephrase it to reflect the tone of AI-generated language. please generate only rephrased version and generate into alignment that easy to copy and pasted in notepad please
