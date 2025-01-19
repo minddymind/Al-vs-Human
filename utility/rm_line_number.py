@@ -1,16 +1,17 @@
 import re
 import sys
-# Remove numbers from review.txt and AI-review.txt
+
+# Remove numbers from the beginning of each line in the input file
 def remove_numbers_from_file(input_file):
     with open(input_file, 'r') as file:
         lines = file.readlines()
     
     with open(input_file, 'w') as file:
         for line in lines:
-            cleaned_line = re.sub(r'\b([1-9][0-9]{0,2}|1000)\b', '', line)
+            # Remove any number followed by a period (e.g., "1. ", "200. ")
+            cleaned_line = re.sub(r'^\d+\.\s*', '', line)
 
-            file.write(cleaned_line.strip() + '\n')
-
+            file.write(cleaned_line)
 
 # Check if the script is being called with a filename argument
 if len(sys.argv) != 2:
