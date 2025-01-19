@@ -16,6 +16,14 @@ rm -v use_this_review/review11.txt
 python3 utility/add_line_number.py use_this_review
 
 #5. use generative ai to generate reviews from ai and store it in use_this_ai_review folder
+# Done !
 
-#6. clean text in use_this_ai_review folder and use_this_review folder to remove special characters, emoji, and non important words
+#6. concat data from ai and human in to one file of each human and ai (also add line number to each review)
+python3 utility/concat_data.py use_this_ai_review/review1-ai.txt use_this_ai_review/review2-ai.txt use_this_ai_review/review3-ai.txt use_this_ai_review/review5-ai.txt use_this_ai_review/review8-ai.txt concated_ai_review.txt
+#7. clean concat data from human and aito remove special characters, emoji, and non important words
 
+#8 make both data into one csv file
+
+#9 minddy take the process of model training
+
+#done
