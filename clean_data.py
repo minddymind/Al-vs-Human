@@ -17,7 +17,7 @@ def remove_non_words_from_file(input_file, output_file):
 
     # Write the cleaned content to the output file
     with open(output_file, 'w', encoding='utf-8') as file:
-        file.write(cleaned_content)
+        file.write(cleaned_content.lower())
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
