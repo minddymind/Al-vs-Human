@@ -19,9 +19,13 @@ python3 utility/add_line_number.py use_this_review
 # Done !
 
 #6. concat data from ai and human in to one file of each human and ai (also add line number to each review)
-python3 utility/concat_data.py use_this_ai_review/review1-ai.txt use_this_ai_review/review2-ai.txt use_this_ai_review/review3-ai.txt use_this_ai_review/review5-ai.txt use_this_ai_review/review8-ai.txt concated_ai_review.txt
+python3 utility/concat_data.py use_this_review/review1.txt use_this_review/review2.txt use_this_review/review3.txt concated_review_3k.txt
+python3 utility/concat_data.py use_this_ai_review/review1-ai.txt use_this_ai_review/review2-ai.txt use_this_ai_review/review3-ai.txt use_this_ai_review/review5-ai.txt use_this_ai_review/review8-ai.txt concated_ai_review_5k.txt
+
 #7. clean concat data from human and aito remove special characters, emoji, and non important words
 
+python3 clean_data.py concated_review_3k.txt cleaned_concated_review_3k.txt
+python3 clean_data.py concated_ai_review_5k.txt cleaned_concated_ai_review_5k.txt
 #8 make both data into one csv file
 
 #9 minddy take the process of model training

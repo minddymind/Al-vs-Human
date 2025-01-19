@@ -1,5 +1,5 @@
 import re
-
+import sys
 def remove_non_words_from_file(input_file, output_file):
     # Function to clean the content of the file
     def clean_text(text):
@@ -19,9 +19,13 @@ def remove_non_words_from_file(input_file, output_file):
     with open(output_file, 'w', encoding='utf-8') as file:
         file.write(cleaned_content)
 
-# Example usage
-input_file = 'original_review.txt'  # Path to your input file
-output_file = 'cleaned_original_review.txt'  # Path where the cleaned content will be saved
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python clean_data.py <input_file> <output_file>")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
 remove_non_words_from_file(input_file, output_file)
 
 print(f"Content has been cleaned and saved to {output_file}")
