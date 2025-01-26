@@ -8,8 +8,8 @@ def remove_numbers_from_file(input_file):
     
     with open(input_file, 'w') as file:
         for line in lines:
-            # Remove any number followed by a period (e.g., "1. ", "200. ")
-            cleaned_line = re.sub(r'^\d+\.\s*', '', line)
+            # Remove any number followed by a period or a colon (e.g., "1. ", "200. ", "441: ")
+            cleaned_line = re.sub(r'^\d+[\.:]\s*', '', line)
 
             file.write(cleaned_line)
 

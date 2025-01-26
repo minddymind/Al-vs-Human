@@ -64,3 +64,15 @@
 #9 minddy take the process of model training
 
 #done
+
+#test file
+# python3 utility/rm_line_number.py temp_bin/AI-review.txt
+# python3 utility/rm_line_number.py temp_bin/review.txt
+# python3 clean_data.py temp_bin/AI-review.txt at-2.txt
+# python3 clean_data.py temp_bin/review.txt ht-2.txt
+# python3 utility/concat_data.py at-2.txt atest2.txt
+# python3 utility/concat_data.py ht-2.txt htest2.txt
+# python3 utility/rm_line_number.py atest2.txt
+# python3 utility/rm_line_number.py htest2.txt
+# python3 make_csv.py htest2.txt atest2.txt test2.csv
+
