@@ -5,13 +5,29 @@ Health_and_Personal_Care.jsonl
 meta_Health_and_Personal_Care.jsonl
 cleaned_product_in_use.json
 cleaned_reviews.json
-/model
+data/model/
 
 ### macOS ###
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
 
 # Icon must end with two \r
 Icon
