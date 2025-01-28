@@ -1,0 +1,8 @@
+torch
+pandas
+transformers
+scikit-learn
+seaborn
+flask
+fastapi
+flask_cors
