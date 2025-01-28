@@ -34,10 +34,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Review Detector</h1>
-      <div className="pbox">
+      <h1 style={{marginTop: "11rem"}}>Review Detector</h1>
+      <div className="box" >
+          <p>The purpose of this website is to detect reviews of products in the <b>Health and Personal care category</b>, which include skincare, 
+            vitamins, and other products that may be harmful to the human body if they do not meet the standard or 
+            are too over reviewed on an e-commerce website.
+          </p>
+      </div>
+      <div className="pbox" style={{marginTop: "2rem"}}>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="predict-text">Category Health and Personal Care</label>
+          {/* <label style={{marginBottom: "2rem"}} htmlFor="predict-text">Category Health and Personal Care</label> */}
           <textarea
             id="predict-text"
             value={text}
@@ -45,7 +51,7 @@ function App() {
             placeholder="input your text here"
             rows={5}
           />
-          <button className="button" type="submit" disabled={isLoading}>
+          <button className="button" style={{marginTop: "1rem"}} type="submit" disabled={isLoading}>
             {isLoading ? "Predicting..." : "Predict"}
           </button>
         </form>
@@ -53,19 +59,11 @@ function App() {
       {result && !isLoading && (
         <div>
           <h2>Result:</h2>
-
-          <p>Human: {result.Human ? result.Human.toFixed(2) : 0}%</p>
-          <p>AI: {result.AI ? result.AI.toFixed(2) : 0}%</p>
+          <b>Human: {result.Human ? result.Human.toFixed(2) : 0}%</b>
+          <br></br>
+          <b>AI: {result.AI ? result.AI.toFixed(2) : 0}%</b>
         </div>
-      )}  
-    <section style={{marginTop: "8rem"}}>
-    <div className="box">
-    <p>The purpose of this website is to detect reviews of products in the Health and Personal care category, which include skincare, 
-      vitamins, and other products that may be harmful to the human body if they do not meet the standard or 
-      are too over reviewed on an e-commerce website.
-    </p>
-    </div>
-    </section>
+      )} 
     </div>
   );
 }

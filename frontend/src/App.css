@@ -7,8 +7,20 @@
 
 body {
   font-family: Arial, sans-serif;
+  font-size: 20px;
 
-  background-color: #fff;
+  /* background-color: #fff; */
+  
+  background-image: url('./img/img.jpg'); /* Ensure this path is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
   text-align: center;
 }
@@ -28,12 +40,13 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .box {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 75%;
   padding: 10px;
   border-radius: 20px;
   margin: 0 auto;
@@ -42,11 +55,9 @@ h1 {
   font-size: 20px;
 }
 
-
-
 textarea {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   height: 150px;
   padding: 15px;
   font-size: 16px;
@@ -54,28 +65,27 @@ textarea {
   border-radius: 10px;
   outline: none;
   resize: none;
-  
 
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 textarea:focus {
-  border-color: #a23eb9;
-  box-shadow: 0 0 5px rgba(162, 62, 185, 0.4);
+  border-color: #211f21;
+  box-shadow: 0 0 5px rgba(72, 68, 73, 0.4);
 }
 
 /* Label */
-label {
+/* label {
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
   color: #555;
-}
+} */
 
 /* Button */
 .button {
-  background: linear-gradient(135deg, #4a90e2, #50c9c3);
+  background: black;
   color: white;
   padding: 12px 20px;
   font-size: 16px;
@@ -85,24 +95,23 @@ label {
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .button:hover {
-
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  animation: buttonShading 0.5s ease forwards;
+  /* transform: translateY(-2px); */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  /* animation: buttonShading 0.5s ease forwards; */
 }
 
-@keyframes buttonShading {
+/* @keyframes buttonShading {
   0%, 100% {
     background: linear-gradient(135deg, #50c9c3, #4a90e2);
   }
   50% {
     background: linear-gradient(135deg, #4a90e2, #50c9c3);
   }
-}
+} */
 
 
 
@@ -113,7 +122,7 @@ label {
 
 /* Error & Result Messages */
 p {
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 10px;
 }
 
