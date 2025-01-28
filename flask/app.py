@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import HTTPException
 from flask import Flask, request
 from flask_cors import CORS  # Import CORS
 
@@ -18,8 +18,8 @@ except Exception as e:
 # Load the model manually
 try:
     model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
-    path_to_model = os.path.join(os.getcwd(), "data/model/model1.pth")
-    model.load_state_dict(torch.load(path_to_model))
+    # path_to_model = os.path.join(os.getcwd(), "data/model/model1.pth")
+    model.load_state_dict(torch.load("data/model/model1.pth"))
     model.eval()
 except Exception as e:
     raise RuntimeError(f"Error loading model: {e}")
