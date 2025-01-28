@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from flask import Flask, request
 from flask_cors import CORS  # Import CORS
-import json
+
 from pydantic import BaseModel
 from transformers import AutoTokenizer, BertForSequenceClassification
 import torch

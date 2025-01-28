@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [text, setText] = useState(""); // Store user input text
@@ -32,34 +33,39 @@ function App() {
   };
 
   return (
-    <div>
-      <h1 >AI vs Human Text Detector</h1>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}  // Handle text input
-          placeholder="พิมพ์ข้อความที่นี่"
-          rows={5}
-          cols={50}
-        />
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "กำลังทำนาย..." : "ทำนาย"}
-        </button>
-      </form>
-
-      {/* Conditional rendering based on result */}
-      {isLoading && !result && <div>กำลังทำนาย...</div>}  {/* Loading message */}
-      
+    <div className="App">
+      <h1>Review Detector</h1>
+      <div className="pbox">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="predict-text">Category Health and Personal Care</label>
+          <textarea
+            id="predict-text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}  // Handle text input
+            placeholder="input your text here"
+            rows={5}
+          />
+          <button className="button" type="submit" disabled={isLoading}>
+            {isLoading ? "Predicting..." : "Predict"}
+          </button>
+        </form>
+      </div>
       {result && !isLoading && (
         <div>
-          <h2>ผลลัพธ์:</h2>
-          <p>มนุษย์: {result.Human ? result.Human.toFixed(2) : 0}%</p>  {/* Display Human percentage */}
-          <p>AI: {result.AI ? result.AI.toFixed(2) : 0}%</p>  {/* Display AI percentage */}
-        </div>
-      )}
+          <h2>Result:</h2>
 
-      {/* Optional error message */}
-      {result === null && !isLoading && <p>เกิดข้อผิดพลาดบางประการ</p>}  {/* Error message */}
+          <p>Human: {result.Human ? result.Human.toFixed(2) : 0}%</p>
+          <p>AI: {result.AI ? result.AI.toFixed(2) : 0}%</p>
+        </div>
+      )}  
+    <section style={{marginTop: "8rem"}}>
+    <div className="box">
+    <p>The purpose of this website is to detect reviews of products in the Health and Personal care category, which include skincare, 
+      vitamins, and other products that may be harmful to the human body if they do not meet the standard or 
+      are too over reviewed on an e-commerce website.
+    </p>
+    </div>
+    </section>
     </div>
   );
 }
