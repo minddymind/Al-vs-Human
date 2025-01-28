@@ -18,7 +18,7 @@ except Exception as e:
 # Load the model manually
 try:
     model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
-    path_to_model = os.path.join(os.getcwd(), "data/model/model1.pth")
+    path_to_model = os.path.join(os.getcwd(),"..","model1.pth")
     model.load_state_dict(torch.load(path_to_model))
     model.eval()
 except Exception as e:
