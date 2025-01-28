@@ -6,6 +6,7 @@ meta_Health_and_Personal_Care.jsonl
 cleaned_product_in_use.json
 cleaned_reviews.json
 data/model/
+model1.pth
 
 ### macOS ###
 # General
