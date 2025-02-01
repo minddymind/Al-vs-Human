@@ -34,16 +34,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{marginTop: "11rem"}}>Review Detector</h1>
-      <div className="box" >
-          <p>The purpose of this website is to detect reviews of products in the <b>Health and Personal care category</b>, which include skincare, 
-            vitamins, and other products that may be harmful to the human body if they do not meet the standard or 
-            are too over reviewed on an e-commerce website.
-          </p>
+      <h1 style={{marginTop: "8rem"}}>Review Detector</h1>
+      <div className="box">
+        <p>The purpose of this website is to detect reviews of products in the <b className="text">Health and Personal care category</b>, which include skincare, 
+          vitamins, and other products that may be harmful to the human body if they do not meet the standard or 
+          are too over-reviewed on an e-commerce website.
+        </p>
       </div>
       <div className="pbox" style={{marginTop: "2rem"}}>
         <form onSubmit={handleSubmit}>
-          {/* <label style={{marginBottom: "2rem"}} htmlFor="predict-text">Category Health and Personal Care</label> */}
           <textarea
             id="predict-text"
             value={text}
@@ -56,12 +55,31 @@ function App() {
           </button>
         </form>
       </div>
+
       {result && !isLoading && (
         <div>
           <h2>Result:</h2>
-          <b>Human: {result.Human ? result.Human.toFixed(2) : 0}%</b>
-          <br></br>
-          <b>AI: {result.AI ? result.AI.toFixed(2) : 0}%</b>
+          <p><b 
+            style={{
+              color: result.Human > result.AI ? "green" : "black", 
+              backgroundColor: result.Human > result.AI ? "lightgreen" : "transparent",
+              padding: "5px",
+              borderRadius: "5px"
+            }}
+          >
+            Human: {result.Human ? result.Human.toFixed(2) : 0}%
+          </b></p>
+          
+          <p><b 
+            style={{
+              color: result.AI > result.Human ? "red" : "black", 
+              backgroundColor: result.AI > result.Human ? "pink" : "transparent",
+              padding: "5px",
+              borderRadius: "5px"
+            }}
+          >
+            AI: {result.AI ? result.AI.toFixed(2) : 0}%
+          </b></p>
         </div>
       )} 
     </div>

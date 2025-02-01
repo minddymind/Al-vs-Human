@@ -11,10 +11,10 @@ body {
 
   /* background-color: #fff; */
   
-  background-image: url('./img/img.jpg'); /* Ensure this path is correct */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background-image: url('./img/img.jpeg');  */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
   height: 100vh;
   width: 100%;
   display: flex;
@@ -33,6 +33,7 @@ body {
 /* Headings */
 h1 {
   margin-bottom: 20px;
+  color: rgb(92, 55, 174);
 }
 
 /* Form Container */
@@ -51,7 +52,7 @@ h1 {
   border-radius: 20px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
-  background-color: white;
+  /* background-color: white; */
   font-size: 20px;
 }
 
@@ -60,7 +61,7 @@ textarea {
   max-width: 600px;
   height: 150px;
   padding: 15px;
-  font-size: 16px;
+  font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 10px;
   outline: none;
@@ -72,7 +73,7 @@ textarea {
 
 textarea:focus {
   border-color: #211f21;
-  box-shadow: 0 0 5px rgba(72, 68, 73, 0.4);
+  box-shadow: 0 0 5px rgba(92, 55, 174, 0.4);
 }
 
 /* Label */
@@ -85,7 +86,7 @@ textarea:focus {
 
 /* Button */
 .button {
-  background: black;
+  background: rgb(92, 55, 174);
   color: white;
   padding: 12px 20px;
   font-size: 16px;
@@ -128,4 +129,6 @@ p {
 
 h2 {
   margin-top: 20px;
+  color: rgb(92, 55, 174);
 }
+
