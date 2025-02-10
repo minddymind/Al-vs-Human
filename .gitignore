@@ -8,6 +8,7 @@ cleaned_reviews.json
 data/model/
 model1.pth
 
+model1.pth
 ### macOS ###
 # General
 .DS_Store
