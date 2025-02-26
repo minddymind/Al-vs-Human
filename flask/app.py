@@ -1,14 +1,16 @@
 from fastapi import HTTPException
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_cors import CORS  # Import CORS
 
 from pydantic import BaseModel
 from transformers import AutoTokenizer, BertForSequenceClassification
 import torch
 import os
-# Initialize FastAPI
-app = Flask(__name__)
-CORS(app)
+
+# Initialize Flask
+app = Flask(__name__, static_folder="build", static_url_path="/")
+
+
 # Load the tokenizer
 try:
     tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")  # Use the base model tokenizer
@@ -18,7 +20,7 @@ except Exception as e:
 # Load the model manually
 try:
     model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
-    path_to_model = os.path.join(os.getcwd(),"..","model1.pth")
+    path_to_model = os.path.join(os.getcwd(), "..", "model1.pth")
     model.load_state_dict(torch.load(path_to_model))
     model.eval()
 except Exception as e:
@@ -46,7 +48,15 @@ def predict():
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction error: {e}")
-    
+
+# Serve React App
+@app.route("/")
+def serve_react_app():
+    return send_from_directory(app.static_folder, "index.html")
+
+@app.route("/<path:path>")
+def serve_static_files(path):
+    return send_from_directory(app.static_folder, path)
 
 if __name__ == "__main__":
     app.run()
