@@ -6,3 +6,4 @@ seaborn
 flask
 fastapi
 flask_cors
+gunicorn
